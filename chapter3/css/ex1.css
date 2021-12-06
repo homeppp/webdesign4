@@ -1,0 +1,23 @@
+table {
+    /* chapter9-표스타일 / 테두리를 통합 또는 분리 */
+    border-collapse: collapse;
+}
+
+td, th {
+    padding: 8px 20px;
+    border: 1px solid #b7b7b7;
+}
+
+/* nth-child(n) : n번째 요소를 선택하는 선택자 */
+td:nth-child(4), td:nth-child(6) {
+    text-align: right;
+}
+
+thead {
+    background: #2c8daa;
+    color: #fff;
+}
+
+tbody tr:nth-child(2n) {
+    background: #ecfafc;
+}

@@ -1,0 +1,28 @@
+table {
+    /* chapter9-표스타일 / 테두리를 통합 또는 분리 */
+    border-collapse: collapse;
+}
+
+td, th {
+    padding: 8px 20px;
+    border: 1px solid #b7b7b7;
+}
+
+/* nth-child(n) : n번째 요소를 선택하는 선택자 */
+td:nth-child(4), td:nth-child(6) {
+    text-align: right;
+}
+
+thead {
+    background: #2c8daa;
+    color: #fff;
+}
+
+/* nth-child(n+숫자) -> 해당 숫자를 포함한 그 이후 태그를 선택하는 선택자 */
+th:nth-child(n+4), td:nth-child(n+4) {
+    /* chapter6 글꼴관련, 텍스트 스타일 */
+    /* white-space : 줄바꿈을 제어하는 속성(줄바꿈뿐만 아니라 띄어쓰기 또는 탭 등도 어떻게 표시할 지 핸들링하는 속성) */
+    /* white-space : normal  -> 여러 개의 공백을 하나로 표시 / &nbsp; */
+    /* white-space: nowrap -> 여러 개의 공백을 하나로 표시하고 영역 너비를 넘어가는 내용은 줄바꾸지 않고 계속 한 줄로 표시 */
+    white-space: nowrap;
+}
