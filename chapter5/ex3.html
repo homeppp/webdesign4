@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>nuage</title>
+<link rel="stylesheet" href="../../common/css/style-nuage.css">
+<link rel="stylesheet" href="css/ex3.css">
+</head>
+<body>
+<header>
+	<div class="header-container">
+		<h1>Nuage</h1>
+	</div>
+</header>
+<div class="contents">
+	<div class="contents-container">
+	<!-- 샘플은 여기서부터 -->
+        <h1>전망이 뛰어난 서울의 관광 명소</h1>
+        <ul>
+            <li>
+                서울 타워<br>
+                <a href="tour1.html">당사 추천 서울 관광</a> / <a href="tour1.pdf">투어 팜플렛</a>
+            </li>
+            <li>
+                서울 스카이<br>
+                <a href="tour2.html">당사 추천 서울 관광</a> / <a href="tour2.pdf">투어 팜플렛</a>
+            </li>
+        </ul>
+	<!-- 샘플은 여기까지 -->
+	</div>
+</div>
+<footer>
+	<div class="footer-container">
+		<p>©nuage</p>
+	</div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+<script>
+    // 우리가 원하는 태그 -> a 태그 중에서 href 속성을 갖고 있고 href 속성이 .pdf로 끝나는 a 태그
+    let $aTags = $("a");
+    for(let i=0; i<$aTags.length; i++) {
+        let $nthATag = $aTags.get(i);
+        if($nthATag== $aTags.attr(href:"") )
+            // n번째 a 태그가 우리가 원하는 태그인가요?
+            // jquery chqpter1 선택자 객체조작 공부
+            
+    }
+    .css("padding", "8px 20px");
+    .css("border", "1px solid #1396c0");
+    .css("border-radius", "3px");
+    .css("background-color", "#e0f4ff");
+    .css("text-decoration", "none");
+</script>
+</body>
+</html>

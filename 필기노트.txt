@@ -1,0 +1,4 @@
+인라인요소는 width 안먹음  
+inlineblock써서 width 먹여야됨
+textarea 크기 조절 못하게 -> resize : none;
+after 가상클래스 -> css로 추가할수있는 (content: )텍스트든 뭐든
