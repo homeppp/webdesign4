@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>nuage</title>
+<title>PDF 등 특정 파일의 링크를 아이콘이나 배경으로 표시하고 싶다</title>
 <link rel="stylesheet" href="../../common/css/style-nuage.css">
 <link rel="stylesheet" href="css/ex3.css">
 </head>
@@ -41,18 +41,26 @@
 <script>
     // 우리가 원하는 태그 -> a 태그 중에서 href 속성을 갖고 있고 href 속성이 .pdf로 끝나는 a 태그
     let $aTags = $("a");
+
+    
     for(let i=0; i<$aTags.length; i++) {
         let $nthATag = $aTags.get(i);
-        if($nthATag== $aTags.attr(href:"") )
+
+        let attr = $nthATag[i].attr("href");
+        console.log(attr);
+/*
+        if(attr == $nthAtag.attr("href") && $nthATag의 href 속성이 .pdf로 끝난다){
             // n번째 a 태그가 우리가 원하는 태그인가요?
             // jquery chqpter1 선택자 객체조작 공부
-            
+            .css("padding", "8px 20px");
+            .css("border", "1px solid #1396c0");
+            .css("border-radius", "3px");
+            .css("background-color", "#e0f4ff");
+            .css("text-decoration", "none");
+        }
+        */
     }
-    .css("padding", "8px 20px");
-    .css("border", "1px solid #1396c0");
-    .css("border-radius", "3px");
-    .css("background-color", "#e0f4ff");
-    .css("text-decoration", "none");
+
 </script>
 </body>
 </html>
