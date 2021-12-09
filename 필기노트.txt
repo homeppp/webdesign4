@@ -1,4 +1,27 @@
 인라인요소는 width 안먹음  
 inlineblock써서 width 먹여야됨
+
 textarea 크기 조절 못하게 -> resize : none;
+
 after 가상클래스 -> css로 추가할수있는 (content: )텍스트든 뭐든
+
+버블링 -> 한 이벤트가 다른 이벤트로 전파
+버블링 멈추기 -> e.preventDefault();, e.stopPropagation(); 이 두개는 mouseenter에 내포되있음
+
+p태그 안에 div 못 씀
+div안에 div 쓰는걸로 바꿔야 됨
+        
+relative에 absolute가 포지션됨
+
+strong이나 span이나 써서 그라디언트로 형광펜효과
+
+검색기능 활용해서 검색어와 일치하는 텍스트에 밑줄 긋기
+웹 그림판의 아이디어만 간단하게 구현(곡선없이 직선만 그려지는 그림판)
+
+button type="button" 안넣으면 submit으로 자동 지정
+
+jquery off속성으로 이벤트 끌수도있음
+.html() -> 안에 태그 싹 다 가져옴
+.text() -> 안에 텍스트만 가져옴
+
+브레드크럼즈리스트(사이트이동경로) -> 주로 공공기관에서 쓰임

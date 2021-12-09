@@ -40,15 +40,20 @@
 
 <script>
     // 우리가 원하는 태그 -> a 태그 중에서 href 속성을 갖고 있고 href 속성이 .pdf로 끝나는 a 태그
-    let $aTags = $("a");
+    $("a[href$='.pdf']").css("padding", "8px 20px");
+    $("a[href$='.pdf']").css("border", "1px solid #1396c0");
+    $("a[href$='.pdf']").css("border-radius", "3px");
+    $("a[href$='.pdf']").css("background-color", "#e0f4ff");
+    $("a[href$='.pdf']").css("text-decoration", "none");
 
-    
+
+/*
     for(let i=0; i<$aTags.length; i++) {
         let $nthATag = $aTags.get(i);
 
         let attr = $nthATag[i].attr("href");
         console.log(attr);
-/*
+
         if(attr == $nthAtag.attr("href") && $nthATag의 href 속성이 .pdf로 끝난다){
             // n번째 a 태그가 우리가 원하는 태그인가요?
             // jquery chqpter1 선택자 객체조작 공부
@@ -58,9 +63,9 @@
             .css("background-color", "#e0f4ff");
             .css("text-decoration", "none");
         }
-        */
+        
     }
-
+*/
 </script>
 </body>
 </html>

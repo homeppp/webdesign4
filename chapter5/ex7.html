@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>button 태그의 스타일을 변경하고 싶다</title>
+<link rel="stylesheet" href="../../common/css/style-hastings.css">
+<style>
+    #edit_end {
+        display: none;
+    }
+</style>
+</head>
+<body>
+<header>
+	<div class="header-container">
+		<h1>Hastings</h1>
+	</div>
+</header>
+<div class="contents">
+	<div class="contents-container">
+	<!-- 샘플은 여기서부터 -->
+        <h1>기본 정보</h1>
+
+        <p>
+            <button type="button" id="edit_start">
+                <img src="images/edit.png"> 기본 정보 수정
+            </button>
+            <button type="button" id="edit_end">
+                <img src="images/edit.png"> 기본 정보 수정
+            </button>
+        </p>
+
+        <p class="name">이름 : <span>김철수</span></p>
+        <p class="phone">전화번호 : <span> 010-1234-5678</span></p>
+        <p class="addr">주소 : <span> 중앙대로 668, 14층</span></p>
+	<!-- 샘플은 여기까지 -->
+	</div>
+</div>
+<footer>
+	<div class="footer-container">
+		<p><small>©Hastings</small></p>
+	</div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+<script>
+    
+    $("#edit_start").on("click", function(){
+        // nameInfo = "이름 : 김철수"
+        let nameInfo = $(".name").text();
+        // nameInfo = ["이름", "김철수"]
+        nameInfo = nameInfo.split(" : ");
+        
+        let phoneInfo = $(".phone").text();
+        phoneInfo = phoneInfo.split(" : ");
+
+        let addrInfo = $(".addr").text();
+        addrInfo = addrInfo.split(" : ");
+
+        $(".name").html("이름 : <input id=\"nameTxt\" type=\"text\" value=\"" + nameInfo[1] +"\">");
+        $(".phone").html("전화번호 : <input id=\"phoneTxt\" type=\"text\" value=\"" + phoneInfo[1] +"\">");
+        $(".addr").html("주소 : <input id=\"addrTxt\" type=\"text\" value=\"" + addrInfo[1] +"\">");
+
+        $("#edit_start").css("display", "none");
+        $("#edit_end").css("display", "inline");
+        
+    });
+
+    $("#edit_end").on("click", function() {
+        let name = $("#nameTxt").val();
+        let phone = $("#phoneTxt").val();
+        let addr = $("#addrTxt").val();
+
+        $(".name").text("이름 : " + name );
+        $(".phone").text("전화번호 : " + phone );
+        $(".addr").text("주소 : " + addr );
+
+        $("#edit_start").css("display", "inline");
+        $("#edit_end").css("display", "none");
+    });
+</script>
+</body>
+</html>

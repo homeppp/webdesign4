@@ -1,0 +1,9 @@
+body {
+    line-height: 1.7;
+}
+
+strong {
+    font-weight: normal;
+    /* transparent -> 투명색 전체에서 55%까지, 55%부터 노란색, 끝날 때도 노란색 */
+    background: linear-gradient(transparent 55%, #fafa00 55%, #fafa00 100%);
+}
