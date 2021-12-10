@@ -1,0 +1,27 @@
+.info {
+    margin-bottom: 20px;
+    width: 298px;
+    /* div에 background-color나 border가 적용된게 아니므로 div의 border를 아무리 깎아도 적용되지 않은 것처럼 보임 */
+    /* border-radius: 10px; */
+}
+
+.info h2 {
+    margin: 0;
+    border: 1px solid #6bc5e2;
+    padding: 5px;
+    /* 일반적으로 이런 디자인 이미지를 받으면 한 묶음으로 생각하고 div에 border-radius를 줌 */
+    /* 우리는 제목, 컨텐츠를 분리해서 제목의 윗부분과 컨텐츠의 아랫부분에 border-radius를 줌 */
+    border-radius: 10px 10px 0 0;
+    background: #6bc5e2;
+    text-align: center;
+    font-size: 18px;
+    color: #ffffff;
+}
+
+.info p {
+    /* 블록 레벨 태그는 브라우저가 기본적으로 마진을 살짝 주기 때문에 이를 없애기 위해서 사용 ( 노멀라이즈, 새니타이즈 CSS를 사용하면 margin: 0; 은 없어도 됨 ) */
+    margin: 0;
+    border: 1px solid #6bc5e2;
+    padding: 20px;
+    border-radius: 0 0 10px 10px;
+}

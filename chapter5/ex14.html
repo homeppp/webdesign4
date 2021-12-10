@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>insert page title</title>
+    <link rel="stylesheet" href="css/ex14.css">
+</head>
+<body>
+    <div class="tab">
+        <ul class="tabmenu">
+            <li class="active" id="character"><a href="#">특징</a></li>
+            <li id="appearance"><a href="#">외관</a></li>
+            <li id="design"><a href="#">디자인</a></li>
+            <li id="specific"><a href="#">사양</a></li>
+        </ul>
+
+        <div id="char_contents" class="contents" style="display: block;">
+            <p>콤팩트하기 때문에 어디든지 들고 이동할 수 있는 스피커 탄생</p>
+            <p>스트리밍 시대의 Bluetooth오디오 스피커. 음역의 넓이에 장르를 가리지 않는 압도적인 사운드의 재현</p>
+        </div>
+        <div id="spec_contents" class="contents">
+            <p>
+                bluetooth
+                - Ver: 3.0
+                - Frequency : 2.40 ~ 2.48 GHz
+                - Range : 10M
+                - Profile : HFP, A2DP, AVRCP
+            </p>
+            <p>
+                Audio
+                - RMS : 25W ( 2*5W + 15W )
+                - Frequency response : 35Hz ~ 18KHz
+                - S/N ratio : >= 65 dB
+                - Distortion : <= 1%
+                - RATED IMP : 4 OHM
+            </p>
+            <p>
+                Adjustment : Power On/Off, Volume, Play.Pause, Bass Treble
+            </p>
+            <p>
+                Music File Format : MP3
+            </p>
+            <p>
+                Input Device Type : Bluetooth, AUX, USB
+            </p>
+            <p>
+                Power Type : AC 220V, 60Hz, 25W
+            </p>
+            <p>
+                Size : 254 X 144 X 144 mm
+            </p>
+            <p>
+                Net weight : 2.6Kg / 3.6Kg
+            </p>
+        </div>
+        <div class="contents" id="app_contents">
+            <img src="images/package.jpg">
+        </div>
+        <div class="contents" id="des_contents">
+            <img src="images/design.png">
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        // 외관탭을 누르면 현재 active인 태그를 찾아서 active 지우고 외관탭에 active 추가
+        $(".tabmenu a").on("click", function(){
+            // 클래스가 active인 태그를 찾아서 그 태그의 active 클래스를 지운다.
+            $(".tabmenu li.active").removeClass("active");
+
+            // 현재 클릭한 탭의 li에 active 클래스를 붙인다.
+            let $li = $(this).parent();
+            $li.addClass("active");
+            
+            let currentID = $li.attr("id");
+            if(currentID == "character"){
+                $(".contents").css("display", "none");
+                $("#char_contents").css("display", "block");
+            } else if(currentID == "appearance"){
+                $(".contents").css("display", "none");
+                $("#app_contents").css("display", "block");
+            } else if(currentID == "design"){
+                $(".contents").css("display", "none");
+                $("#des_contents").css("display", "block");
+            } else {
+                $(".contents").css("display", "none");
+                $("#spec_contents").css("display", "block");
+            }
+        });
+    </script>
+</body>
+</html>
