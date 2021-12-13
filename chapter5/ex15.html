@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>insert page title</title>
+    <link rel="stylesheet" href="css/ex15.css">
+</head>
+<body>
+    <ol class="pagination">
+        <li><a class="prev" href="#" prev="0"> &lt; </a></li>
+        <!-- li:nth-child(2) -->
+        <li class="current"><a href="#">1</a></li>
+        <!-- li:nth-child(3) -->
+        <li><a href="#">2</a></li>
+        <!-- li:nth-child(4) -->
+        <li><a href="#">3</a></li>
+        <!-- li:nth-child(5) -->
+        <li><a href="#">4</a></li>
+        <!-- li:nth-child(6) -->
+        <li><a href="#">5</a></li>
+        <li><a class="next" href="#" next="6"> &gt; </a></li>
+    </ol>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <script>
+        // 1~5 페이지 번호 눌렀을 때 누른 페이지 번호 활성화 디자인 적용되도록
+        // 활성화 디자인 -> class="current" 사용
+        $(".pagination a").on("click", function(){
+            $(".pagination .current").removeClass("current");
+
+            // 현재 클릭한 a태그를 감싸고 있는 li 태그
+            let $li = $(this).parent();
+            $li.addClass("current");
+        });
+
+        // 다음버튼 눌렀을 때 그 다음 번호들이 나오게
+        $(".pagination .next").off("click");
+        $(".pagination .next").on("click", function(){
+            // 현재 클릭한 next 버튼 (a태그)의 next 속성 값을 가져옴
+            // next 속성의 값이 우리가 보기에는 숫자 6처럼 보이지만 "" 안에 숫자를 표현했으니까 숫자가 아니라 문자열
+            let next = $(this).attr("next");
+            
+            next = parseInt(next);         
+            
+            // next 속성 값을 사용해서 번호를 하나씩 출력을 하면 됨
+            for(let i=0; i<5; i++){
+                let y = i+2;
+                let z = next+i;
+                $("li:nth-child(" + y + ") a").text(z);
+                
+            }       
+            
+            $(".pagination .current").removeClass("current");
+            $("li:nth-child(2)").addClass("current");     
+
+            $(this).attr("next", next+5); 
+            $(".pagination .prev").attr("prev", next-1);
+
+        });
+
+        $(".pagination .prev").off("click");
+        $(".pagination .prev").on("click", function(){
+            let prev = $(this).attr("prev");
+
+            prev = parseInt(prev);
+            
+            for(let i=0; i<=4; i++){
+                let nthChild = 6-i;
+                
+                $("li:nth-child(" + nthChild + ") a").text(prev-i);
+                
+            }     
+
+            $(".pagination .current").removeClass("current");
+            $("li:nth-child(6)").addClass("current");
+            
+            $(this).attr("prev", prev-5);
+            $(".pagination .next").attr("next", prev+1);
+
+        });
+
+    </script>
+</body>
+</html>

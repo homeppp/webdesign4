@@ -13,7 +13,6 @@
 
 .submenu li {
     border-bottom: 1px solid #98adb7;
-    background: url(../images/arrow.png) right 20px center no-repeat;
 }
 
 .submenu li:last-child {
@@ -31,4 +30,5 @@
     padding: 10px 30px;
     text-decoration: none;
     color: #406485;
+    background: url(../images/arrow.png) right 20px center no-repeat;
 }
