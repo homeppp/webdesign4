@@ -1,11 +1,18 @@
 <!DOCTYPE html>
 <html lang="ko">
+    <!-- 페이지네이션의 기능을 자바스크립트로 구현했기 때문에 페이지 이동없이 하나의 페이지에서 동작을 함 -->
+    <!-- SPA(Single-Page Application) -> 페이지 이동 없이 하나의 페이지에서 동적으로 이런저런 기능이 동작하는 페이지-->
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>insert page title</title>
+    <title>페이지네이션을 작성하고 싶다</title>
     <link rel="stylesheet" href="css/ex15.css">
+    <style>
+        .pagination li:first-child {
+            visibility: hidden;
+        }
+    </style>
 </head>
 <body>
     <ol class="pagination">
@@ -59,6 +66,11 @@
             $(this).attr("next", next+5); 
             $(".pagination .prev").attr("prev", next-1);
 
+            $(".pagination li:first-child").css("visibility", "visible");
+
+            if(next ==46){
+                $(".pagination li:last-child").css("visibility", "hidden");
+            }
         });
 
         $(".pagination .prev").off("click");
@@ -80,6 +92,14 @@
             $(this).attr("prev", prev-5);
             $(".pagination .next").attr("next", prev+1);
 
+            $(".pagination li:last-child").css("visibility", "visible");
+            // if(prev != 50){$(".pagination li:last-child").css("visibility", "visible");}
+
+            if(prev == 5){
+                $(".pagination li:first-child").css("visibility", "hidden");
+            }
+
+            
         });
 
     </script>
