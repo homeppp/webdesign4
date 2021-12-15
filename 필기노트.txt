@@ -46,3 +46,18 @@ img에 글씨 있는건 alt속성에 그대로 다써줘야함
 
 div height100%줘도 div 크기만큼만, body까지 height100%줘도 body는 자식태그만큼만 감쌈
 html height100%까지 줘야 전체화면에 꽉참
+
+appearance: none; -> 아직 개발중인 비표준 CSS3 속성 / select 선택창 기본제공되는 css 사라지게
+비표준 속성은 webkit moz 등 써줘야함
+
+로딩중 이미지 css사용해서 만듦 -> preloader, spinner
+https://projects.lukehaas.me/css-loaders/
+
+엔터 스페이스 키도 공백으로 되서 인라인 레벨요소 붙일때 주의
+
+nav ul에 마진 패딩 0 주고 시작하는게 좋음
+navigation 늘리거나 줄이고 싶을때는 padding 사용
+
+자식 태그가 float 속성을 갖고 있으면 부모 태그에 일반적으로 overflow:hidden 줌
+
+href에 ?파라미터이름=값 -> 현재 페이지로 이동을 하는데 파라미터와 값을 가지고 현재 페이지로 이동해라
