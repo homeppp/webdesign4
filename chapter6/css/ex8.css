@@ -1,0 +1,36 @@
+body {
+    margin: 0;
+}
+
+nav {
+    background: #000000;
+    border-bottom: 5px solid #37a29B;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-flow: row;
+    margin: 0;
+    padding: 20px 10px 0 10px;
+}
+
+nav li a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 14px;
+    color: #ffffff;
+}
+
+nav li a:hover {
+    background: #37a29B;
+    border-radius: 10px 10px 0 0;
+}
+
+nav li.contact {
+    /* margin을 auto로 주게 되면 여백을 최대한 설정 */
+    /* margin을 주려면 블록레벨 태그여야하고 width가 있어야 함 / 컨텐츠의 배치는 왠만하면 flexbox를 사용하는게 좋음 */
+    margin-left: auto;
+}

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>컴퓨터용 글로벌 내비게이션을 작성하고 싶다(flexbox)</title>
+    <title>접속한 페이지의 내비게이션 링크를 강조하고 싶다</title>
     <link rel="stylesheet" href="css/ex4.css">
 </head>
 <body>
@@ -18,11 +18,40 @@
     <nav>
         <ul>
             <li><a href="?current=home">HOME</a></li>
-            <li><a href="?current=intro" class="current">회사개요</a></li>
+            <li><a href="?current=intro">회사개요</a></li>
             <li><a href="?current=portfolio">업무내용</a></li>
             <li><a href="?current=connection">접속하기</a></li>
             <li><a href="?current=how">문의하기</a></li>
         </ul>
     </nav>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        $("li").on("click", function(){
+
+        });
+        let parameters = location.search;
+        // 첫 번째(0번 인덱스)를 제외한 나머지 문자만 뽑음
+        parameters = parameters.substring(1, parameters.length);
+        parameters = parameters.split("=");
+
+        if(parameters[1] == "home") {
+            $("ul li:nth-child(1) a").addClass("current");
+         } else if(parameters[1] == "intro"){
+            $("ul li:nth-child(2) a").addClass("current");
+         } else if(parameters[1] == "portfolio"){
+            $("ul li:nth-child(3) a").addClass("current");
+         } else if(parameters[1] == "connection"){
+            $("ul li:nth-child(4) a").addClass("current");
+         } else if(parameters[1] == "how"){
+            $("ul li:nth-child(5) a").addClass("current");
+         }
+        
+        
+
+        // $(".current").removeClass("current");
+        // $("a[href='"+ parameters +"']").addClass("current");
+            
+    </script>
 </body>
 </html>
