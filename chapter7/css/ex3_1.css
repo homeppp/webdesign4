@@ -1,0 +1,30 @@
+body {
+    margin: 0;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+.main-container {
+    overflow: hidden;
+}
+
+.sidebar {
+    width: 300px;
+    background: green;
+    float: left;
+}
+
+.maincol {
+    float: right;
+    width: 100%;
+    margin-left: -300px;
+}
+
+.maincol-container {
+    background: greenyellow;
+    /* 왼쪽 마진을 360px만큼 줬지만 사이드바가 왼쪽에서 300px만큼 공간을 차지하고 있으므로 사이드바와 메인 사이의 실제 너비는 60px */
+    margin-left: 360px;
+}
+
