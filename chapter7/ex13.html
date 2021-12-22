@@ -41,19 +41,23 @@
                 <div class="column2">
                     <div class="news">
                         <h2>공지사항</h2>
-                                    <ul class="news-contents">
-                                        <li><img src="images/photo1.jpg" alt="">
-                                    <p>고정석 무료 사용 이벤트 실시 중. 11월 1일부터 14일까지 2주 동안 고정석을 매일 선착순 2자리에 한해서 무료로 이용할 수 있습니다!</p>
-                                </li>
-                                <li><img src="images/photo2.jpg" alt="">
-                                    <p>이용자 주체의 이벤트를 실시중에 있습니다. 좌식 책상 공간 예약, 장소 예약, 전체 대여 등 크고 작은 행사를 이용해 주세요.</p>
-                                </li>
-                                <li><img src="images/photo3.jpg" alt="">
+                        <ul class="news-contents">
+                            <li>
+                                <img src="images/photo1.jpg">
+                                <p>고정석 무료 사용 이벤트 실시 중. 11월 1일부터 14일까지 2주 동안 고정석을 매일 선착순 2자리에 한해서 무료로 이용할 수 있습니다!</p>
+                            </li>
+                            <li>
+                                <img src="images/photo2.jpg">
+                                <p>이용자 주체의 이벤트를 실시중에 있습니다. 좌식 책상 공간 예약, 장소 예약, 전체 대여 등 크고 작은 행사를 이용해 주세요.</p>
+                            </li>
+                            <li>
+                                <img src="images/photo3.jpg">
                                 <p>웹 디자이너／프로젝트 엔지니어와의 교류를 위한 연구회을 정기적으로 개최하고 있습니다. 다음은 11월 30일, 참가자 모집 중입니다.</p>
-                        </li>
-                                <li><img src="images/photo4.jpg" alt="">
-                                    <p>화제의 오븐이 탕비실에 등장했습니다. 언제든지 자유롭게 이용할 수 있습니다, 그래서 보세요.</p>
-                                </li>
+                            </li>
+                            <li>
+                                <img src="images/photo4.jpg">
+                                <p>화제의 오븐이 탕비실에 등장했습니다. 언제든지 자유롭게 이용할 수 있습니다, 그래서 보세요.</p>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -85,14 +89,18 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script>
         $(window).on("scroll" , function() {
-            let $window = $(this);
-            let reloadPoint = $("body").height() / 2;
-            if($window.scrollTop() >= reloadPoint) {
+            let currentScrollTop = $(this).scrollTop();
+            // window.innerHeight -> 페이지의 높이
+            // $(window).innerHeight() -> 페이지의 높이
+            let scrollMiddle = window.innerHeight / 2;
+            if(currentScrollTop >= scrollMiddle) {
+                $(".campaign").css("display", "block");
+
                 setTimeout(function() {
-                    $(".campaign").css("display", "block")
+                    $(".campaign").css("display", "none");
                 }, 3000);
             }
-        }
+        })
     </script>
 </body>
 </html>

@@ -75,3 +75,8 @@ margin: 0 auto -> 가운데 width 값을 줘야 가운데정렬이 완성
 order 속성 사용하여 flex 되있는 것들 좌우 바꾸기 가능
 
 zindex로 순서지정하여 위에 올 것을 지정 가능
+
+overflow-y : auto -> y축 넘치면 스크롤 생김
+	    scroll -> 무조건 스크롤 생김
+
+사이트맵(SiteMap) : 사이트 내 이동할  수 있는 모든 링크를 모아놓은 페이지
