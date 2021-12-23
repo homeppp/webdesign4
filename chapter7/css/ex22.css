@@ -1,0 +1,114 @@
+html * {
+	box-sizing: border-box;
+}
+body {
+	margin: 0;
+	background: url(../images/bg.png);
+	font-family: sans-serif;
+	font-size: 16px;
+}
+
+header {
+	background: #000000;
+}
+.header-container {
+	padding: 30px 20px 10px 20px;
+}
+.header-logo {
+	margin: 0;
+	width: 200px;
+	height: 44px;
+	background: url(../images/logo.png) no-repeat;
+	background-size: 200px 44px;
+	text-indent: -9999px;
+}
+
+nav {
+	background: #000000;
+}
+.nav-container {
+	padding: 0 20px 0 20px;
+}
+.globalnav {
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.globalnav li {
+	float: left;
+	width: 20%;
+}
+.globalnav li a {
+	display: block;
+	padding: 10px 0;
+	border-bottom: 8px solid #ffffff;
+	text-decoration: none;
+	text-align: center;
+	line-height: 100%;
+	color: #ffffff;
+}
+.globalnav li a:hover,
+.globalnav li a.current {
+	border-bottom: 8px solid #7bae34;
+	color: #7bae34;
+}
+
+.footer-container {
+	padding: 20px;
+	border-radius: 0 0 10px 10px;
+	background: #000000;	
+}
+.copyright {
+	margin: 0;
+	font-size: 0.8rem;
+	color: #ffffff;
+}
+
+.main-container {
+	padding: 0 0 40px 0;
+	background: #ffffff;
+}
+
+/* float을 사용해서 컨텐츠들을 나열할 때는 한 줄에 몇 개씩 보여줄지 고민해야했지만 */
+/* 플렉스박스는 그런 고민을 하지 않아도 됨 flex-flow에 사용한 두 번째 값 ( 또는 flex-wrap ) 때문에 */
+/* flex-flow: row wrap -> 플렉스 아이템들을 여러 줄에 걸쳐서 한줄에 나열하도록 지정 */
+.news {
+    margin: 0 20px;
+}
+
+.news h1 {
+    margin: 0;
+    padding: 30px 0;
+    font-size: 1.2rem;
+}
+
+.news-contents {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.news-contents li {
+    flex: 0 0 19%;
+    border: 1px solid #dadada;
+    margin-bottom: 5px;
+}
+
+/* :empty 상태 선택자 -> 해당 태그 내 텍스트와 자식 태그가 없을 경우 */
+.news-contents li:empty {
+    border: none;
+}
+
+.news-contents li img {
+    width: 100%;
+}
+
+.news-contents li p {
+    margin: 0;
+    padding: 10px;
+    font-size: 0.9rem;
+}

@@ -67,7 +67,9 @@ url과 관련된 브라우저 객체 모델 -> location
 0,0에서 시작하여 크기만큼의 이미지를 보여줌, 그 뒤에 조절은 0,0 기준에서 조절해서 이미지를 보여줘야함
 
 flex: 1 0 auto; -> flex: 확대비율 축소비율 기준크기; 기본값은 0 1 auto
-flexflow/flexshirink/flexwrap
+flexflow -> flexdirection(방향) + flexwrap(줄배치)
+flexshirink
+flexwrap
 
 margin: auto -> margin 최대한 설정
 margin: 0 auto -> 가운데 width 값을 줘야 가운데정렬이 완성
@@ -80,3 +82,15 @@ overflow-y : auto -> y축 넘치면 스크롤 생김
 	    scroll -> 무조건 스크롤 생김
 
 사이트맵(SiteMap) : 사이트 내 이동할  수 있는 모든 링크를 모아놓은 페이지
+
+img에 display block 주는 것
+
+:empty -> 해당 태그 내 텍스트 자식태그 없을 경우 잡아주는 상태 선택자
+
+mediaquery -> minwidth - 이 너비 이상일 때
+	       maxwidth - 이 너비 이하일 때
+	   -> 조건이 맞을 때만 적용되는 CSS, 미디어 쿼리 바깥에 있는 CSS는 무조건(항상) 적용되는 CSS
+	   -> 바깥에 모바일 전용 CSS를 두고, 안에 컴퓨터용 CSS 적어두면 모바일 퍼스트 CSS가 됨
+	   -> 모바일 기기의 너비가 컴퓨터 화면의 너비보다 좁기 때문에 모바일 디자인이 훨씬 단순함
+	      그래서 일반적으로 모바일퍼스트 CSS를 씀
+	      이렇게 해야 CSS 짜는 분량이 최소화됨
