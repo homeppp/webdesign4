@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>내비게이션 디자인을 바꾸고 싶다</title>
+    <link rel="stylesheet" href="css/ex6.css">
+</head>
+<body>
+    <!-- 트리거 버튼(trigger button / 일명 햄버거 버튼)을 만드는 작업은 크게 3가지로 나뉨 -->
+    <!-- 1. 화면에 햄버거 버튼을 둠 -->
+    <!-- 2. 햄버거 버튼을 눌렀을 때 나올 내비게이션을 화면에 둠 -->
+    <!-- 3. JavaScript를 사용해서 햄버거 버튼을 눌렀다면 내비게이션 버튼을 보이게 또는 보이지 않게 처리 -->
+    <header>
+        <div class="header-container">
+            <a href="#">
+                <h1 class="header-logo">쉐어 오피스 NEST 505</h1>
+            </a>
+            <a href="#" id="slidemenu-btn"><div class="header-navbtn"></div></a>
+        </div>
+    </header>
+
+    <nav>
+        <div class="nav-container" id="js-slidemenu">
+            <ul class="globalnav">
+                <li><a href="#">About</a></li>
+                <li><a href="#">Price</a></li>
+                <li><a href="#">Facilities</a></li>
+                <li><a href="#">Access</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="main-container">
+            <div class="keyvisual">
+                <img src="images/keyvisual.jpg">
+            </div>
+            <p class="maincopy">쉐어 오피스 NEST 505에서 높은 효율, 깊은 지식, 넓은 업무를!</p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="copyright">&copy;NEST505</div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        function setBackground() {
+            let $background = $("<div>").addClass("js-slidemenu-effect");
+
+            $background.on('click', function(){
+                $("#slidemenu-btn").click();
+            });
+
+            $('body').append($background);
+        }
+
+        function removeBackground() {
+            $('.js-slidemenu-effect').remove();
+        }
+
+        //  hamburger menu
+        $('#slidemenu-btn').on('click', function(e){
+            e.preventDefault();
+
+            if($('.js-slidemenu-effect').length == 0){
+                setBackground();
+
+                $('#js-slidemenu').slideDown('fast');
+            } else {
+                removeBackground();
+
+                $('#js-slidemenu').slideUp('fast');
+            }
+        });
+    </script>
+</body>
+</html>
