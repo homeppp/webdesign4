@@ -11,11 +11,17 @@ main {
     font-family: 'Lobster', cursive;
     font-size: 80px;
     color: #f1e5d0;
+}
+.logo:hover {
     text-shadow: 4px 4px 5px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
 }
 
 .info {
     font-family: 'Homenaje', sans-serif;
     font-size: 30px;
+}
+.info:hover {
     text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.5), 1px 1px 1px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
 }

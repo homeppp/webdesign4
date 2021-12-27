@@ -1,0 +1,35 @@
+body {
+    margin: 0;
+}
+
+nav {
+    padding: 30px 0;
+    border-bottom: 2px solid #000000;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav li a {
+    display: block;
+    padding: 0 30px;
+    text-decoration: none;
+    text-align: center;
+    font-family: 'Lobster', cursive;
+    font-size: 40px;
+    color: #000000;
+    /* 컨텐츠에 회전, 이동, 확대/축소, 왜곡(기울임) 을 줄 수 있는 속성 */
+    /* 회전 : rotate -> 각도를 양수로 주면 시계 방향으로 회전 / 음수로 주면 반시계 회전 */
+    /* 이동 : translate -> x축 이동량을 양수로 주면 왼 -> 오 로 움직임 / y축 이동량을 양수로 주면 위 -> 아래 로 움직임 */
+    /* 확대/축소 : scale -> 양수로 비율을 주면 확대 / 음수로 비율을 주면 축소 / 비율 1은 원래 크기 ( 100% ) / 비율 1.5는 원래 크기의 50% 더 크게 ( 150% ) / 비율 0.9는 원래 크기의 90% 로 작아지게 ( 10% 축소 시켜라 ) */
+    /* 왜곡 : skew */
+    transform: rotate(-20deg);
+}
+nav li a:hover {
+    color: #d34547;
+}
