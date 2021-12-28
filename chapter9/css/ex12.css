@@ -1,0 +1,33 @@
+body {
+    margin: 0;
+}
+
+.outer ul {
+    overflow: hidden;
+    padding: 70px 0;
+    margin: 0;
+    list-style: none;
+}
+
+.outer li {
+    float: left;
+    box-sizing: border-box;
+    width: 20%;
+    padding: 8px;
+    font-size: 0;
+}
+
+.outer li img {
+    width: 100%;
+    height: auto;
+    outline: 3px solid #dedede;
+    transition: all 1s linear;
+    
+}
+
+.outer li a img:hover {
+    /* 이미지의 좌우를 바꿀 때는 3차원 변형 사용할 수 있음 */
+    /* rotateY -> Y축을 기준으로 3차원 회전을 하는 함수 */
+    transform: rotateY(180deg);
+    opacity: 0.5;
+}

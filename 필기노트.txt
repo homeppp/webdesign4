@@ -123,3 +123,59 @@ filter -> brightness(150%) - 50%만큼 더 밝게
 	blur(3px) - 블러처리
 
 img는 border 와 같은 역할을 하는 outline 쓸 수 있음
+
+3차원 변형 - rotateY -> Y축을 기준으로 3차원 회전을 하는 함수
+
+transition 은 처음과 끝 두가지일 때 사용
+animation 은 중간 중간에도 스타일 바꿀 수 있음
+
+animation - @keyframes 색바꾸기{ 0%{filter: hue-rotate(0deg)} 100%{filter: hue-rotate(159deg)} } 
+    /* 이 태그에 적용할 애니메이션 이름 */
+    animation-name: change_color;
+    /* 애니메이션 적용 시간 */
+    animation-duration: 3s;
+    /* 애니메이션 적용 속도 곡선 */
+    animation-timing-function: linear;
+    /* 애니메이션의 방향(정방향, 역방향) */
+    animation-direction: alternate;
+    /* 애니메이션 반복횟수(숫자, infinite) */
+    animation-iteration-count: infinite;
+    /* 애니메이션의 재생 상태 */
+    animation-play-state: paused;   running;
+
+ajax 사용해서 로그인 기능을 구현할 때는 인터페이스 문서를 차고
+$.ajax({
+    url: "member/login",
+    data: "ID="+사용자아이디+"&PW"+사용자비밀번호,
+    type: "POST"
+    success: function(){
+	location.href = "메인(첫)페이지 주소"
+    },
+    error: function(info){
+	if(info.status == 404) {
+		alert("아이디 또는 비밀번호를 확인하세요.");
+	}
+    }
+});
+사용자가 입력한 아이디, 비밀번호를 검증하는 코드도 넣어서
+윤곽 만들어놓고 나중에 완성
+
+휴대폰인증 버튼 -> ajax로 휴대폰인증완료만 되게
+	$(".phone_check").on("click", function(){
+		alert("휴대폰 인증이 완료되었습니다");
+		location.href = "회원가입페이지 URL";
+	});
+
+자소서 쓸 때 최대한 했던 걸 많이 쓰기 위해 기록해 놓을 것
+
+퍼블리셔
+-HTML은 정보 전달이라는 목적을 가진 웹 페이지
+-정보를 원하는 사람들에게 정보를 효과적으로 정확하게 전달하려면? 
+ 웹 페이지를 작성하는 사람이 정확하게 파악하고 정보를 구조적으로 표현할 수 있게 작업
+-웹 퍼블리셔는 단순히 디자이너가 만든 웹 페이지를 그대로 웹 브라우저로 옮기는 일만 하지는 않음
+-웹 퍼블리셔는 컨텐츠를 다루는 사람 / 웹 페이지에서 전달하려는 내용을 제대로 해석하고 그 컨텐츠 해석에 맞게 HTML, CSS, JS를 활용하는 컨텐츠 전문가
+-웹 페이지 속 컨텐츠를 잘 해석해 제대로 된 시맨틱한 마크업이 이뤄지고 검색엔진(네이버, 구글)에 최적화된 페이지를 만들어서 본래 의도했던 기획 의도에 맞는 웹 사이트를 만들 수 있음
+-사용자와의 사용성도 고려 -> UI/UX
+-퍼블리셔는 사이트를 제작할 때 기획, 디자인, 웹 개발까지 모두 아우르면서 작업해야하기때문에 그 포지션이 매우 중요!!!
+-퍼블리셔가 되려면 기술적으로는 포토샵, 일러스트, HTML, CSS, JS, Jquery를 배워야 하지만 사용자의 사용성도 고려해야하므로 UI도 많이 신경써야 함
+-한 때 특별한 키워드처럼 붐이었던 UI/UX도 깊게 공부를 해야함
